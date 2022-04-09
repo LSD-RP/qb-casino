@@ -15,9 +15,9 @@ RegisterNetEvent('qb-casino:server:sell', function()
                     price = price + (ItemList[Player.PlayerData.items[k].name] * Player.PlayerData.items[k].amount) * 100
                     Player.Functions.RemoveItem(Player.PlayerData.items[k].name, Player.PlayerData.items[k].amount, k)
 
-        Player.Functions.AddMoney("cash", price, "sold-casino-chips")
-            TriggerClientEvent('QBCore:Notify', src, "You sold your chips for $"..price)
-            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "blue", "**"..GetPlayerName(src) .. "** got $"..price.." for selling the Chips")
+                    Player.Functions.AddMoney("cash", price, "sold-casino-chips")
+                    TriggerClientEvent('QBCore:Notify', src, "You sold your chips for $"..price)
+                    TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "blue", "**"..GetPlayerName(src) .. "** got $"..price.." for selling the Chips")
                 end
             end
         end
